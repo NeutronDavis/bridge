@@ -1,0 +1,6 @@
+@page
+@{ ViewData["Title"]="Resources"; ViewData["Description"]="Practical guidance for modernising enterprise operations."; }
+<partial name="_PageHero" model='new PageHero("Resources","Practical thinking for better business operations","Explore guidance on replacing fragmented processes, improving visibility and selecting the right enterprise platform.")' />
+<section class="section"><div class="container-xl"><div class="card-grid">
+@foreach(var item in new[]{("Moving Beyond Spreadsheets","Recognise when spreadsheets have become an operational constraint and plan a controlled transition to connected business processes.","6 min read"),("Improving Operational Visibility","Learn how shared information, defined ownership and management reporting create a clearer view of performance.","5 min read"),("Selecting an Enterprise Business Platform","A practical framework for assessing fit, configuration, governance, implementation and long-term partnership.","8 min read")}){<article class="info-card"><p class="resource-meta">Guide · @item.Item3</p><h2 class="h3">@item.Item1</h2><p>@item.Item2</p><a class="link-arrow" asp-page="/Contact">Request this guide</a></article>}
+</div></div></section><partial name="_FinalCta" />

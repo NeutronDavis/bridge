@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BridgeDynamics.Website/BridgeDynamics.Website.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BridgeDynamics.Website.Tests/BridgeDynamics.Website.Tests.csproj" />
+  </Folder>
+</Solution>
