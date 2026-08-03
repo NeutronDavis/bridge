@@ -1,0 +1,1 @@
+export function HoneypotField({value,onChange}:{value:string;onChange:(value:string)=>void}){return <div className="honeypot" aria-hidden="true"><label htmlFor="website">Leave this field empty</label><input id="website" name="website" value={value} onChange={event=>onChange(event.target.value)} tabIndex={-1} autoComplete="off"/></div>}

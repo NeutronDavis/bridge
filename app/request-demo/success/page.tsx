@@ -1,0 +1,3 @@
+import type{Metadata}from"next";import{ButtonLink}from"@/components/ui/ButtonLink";import{createMetadata}from"@/lib/seo/metadata";
+export const metadata:Metadata=createMetadata("Demonstration Request Received","Your Bridge Dynamics demonstration request has been received.","/request-demo/success",true);
+export default function Success(){return <section className="status-page"><div className="container status-page__content"><p className="status-code">REQUEST RECEIVED</p><h1>Thank you for your interest in Bridge Dynamics</h1><p className="lead">Our enterprise solutions team will review the information provided and contact you to arrange the next conversation.</p><div className="actions"><ButtonLink href="/platform">Explore the Platform</ButtonLink></div></div></section>}

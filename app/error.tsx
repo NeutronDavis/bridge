@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorState({reset}:{error:Error&{digest?:string};reset:()=>void}){return <section className="status-page"><div className="container status-page__content"><p className="status-code">APPLICATION ERROR</p><h1>We could not display this page</h1><p className="lead">Please try again. If the problem continues, contact our team and we will help.</p><button className="button button--primary" type="button" onClick={reset}>Try again</button></div></section>}

@@ -1,0 +1,4 @@
+import{defineConfig,devices}from"@playwright/test";
+const localChrome=process.platform==="win32"?"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe":undefined;
+const webServer=process.env.PLAYWRIGHT_EXTERNAL_SERVER?undefined:{command:"node scripts/serve-static.mjs",url:"http://127.0.0.1:4173",reuseExistingServer:!process.env.CI,gracefulShutdown:{signal:"SIGTERM" as const,timeout:500}};
+export default defineConfig({testDir:"./e2e",fullyParallel:true,retries:process.env.CI?2:0,reporter:[["list"],["html",{open:"never"}]],use:{baseURL:"http://127.0.0.1:4173",trace:"on-first-retry",screenshot:"only-on-failure",launchOptions:localChrome?{executablePath:localChrome}:undefined},webServer,projects:[{name:"desktop",use:{...devices["Desktop Chrome"]}},{name:"mobile",use:{...devices["Pixel 7"]}}]});

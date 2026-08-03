@@ -1,0 +1,2 @@
+import{ButtonLink}from"@/components/ui/ButtonLink";
+export default function NotFound(){return <section className="status-page"><div className="container status-page__content"><p className="status-code">ERROR 404</p><h1>We could not find that page</h1><p className="lead">The address may have changed, or the page may no longer be available.</p><div className="actions"><ButtonLink href="/">Return to Home</ButtonLink><ButtonLink href="/contact" variant="secondary">Contact Us</ButtonLink></div></div></section>}

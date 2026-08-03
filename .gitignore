@@ -427,3 +427,17 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+# Next.js active implementation
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+playwright-report/
+test-results/
+coverage/
+playwright-report/
+test-results/
+.env
+.env.local
+.env.*.local
+!.env.example

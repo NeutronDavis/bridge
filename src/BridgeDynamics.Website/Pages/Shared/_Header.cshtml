@@ -1,7 +1,0 @@
-@{ var path = Context.Request.Path.Value?.ToLowerInvariant() ?? "/"; string Active(string route) => path == route ? "active" : string.Empty; }
-<header class="site-header"><nav class="navbar navbar-expand-xl" aria-label="Primary navigation"><div class="container-xl">
-<a class="brand" asp-page="/Index" aria-label="Bridge Dynamics home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Bridge <strong>Dynamics</strong></span></a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="primaryNav"><ul class="navbar-nav ms-auto align-items-xl-center">
-<li><a class="nav-link @Active("/platform")" asp-page="/Platform">Platform</a></li><li><a class="nav-link @Active("/solutions")" asp-page="/Solutions">Solutions</a></li><li><a class="nav-link @Active("/industries")" asp-page="/Industries">Industries</a></li><li><a class="nav-link @Active("/pricing")" asp-page="/Pricing">Pricing</a></li><li><a class="nav-link @Active("/security")" asp-page="/Security">Security</a></li><li><a class="nav-link @Active("/resources")" asp-page="/Resources">Resources</a></li><li><a class="nav-link @Active("/company")" asp-page="/Company">Company</a></li><li class="ms-xl-2"><a class="btn btn-primary btn-sm" asp-page="/RequestDemo">Request a Demo</a></li>
-</ul></div></div></nav></header>

@@ -1,0 +1,2 @@
+import{describe,expect,it}from"vitest";import{publicRoutes}from"@/lib/routes";
+describe("public routes",()=>{it("contains every approved route",()=>expect(publicRoutes).toEqual(["/","/platform","/solutions","/industries","/pricing","/security","/resources","/company","/contact","/request-demo","/request-demo/success","/privacy","/terms"]));it("contains no duplicates",()=>expect(new Set(publicRoutes).size).toBe(publicRoutes.length))});
