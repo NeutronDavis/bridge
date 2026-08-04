@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./pages.css";
 import "./forms.css";
+import "./repositioning.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StructuredData } from "@/lib/seo/StructuredData";
@@ -9,7 +10,7 @@ import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
-  title: { default: "Bridge Dynamics | Enterprise Business Operating Platform", template: "%s | Bridge Dynamics" },
+  title: { default: "Bridge Dynamics | Enterprise Business Operating System", template: "%s | Bridge Dynamics" },
   description: siteConfig.description,
 };
 

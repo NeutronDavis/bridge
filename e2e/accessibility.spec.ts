@@ -1,11 +1,13 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-test("home has no basic detectable accessibility violations", async ({ page }) => {
-  await page.goto("/");
-  const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
-  expect(results.violations).toEqual([]);
-});
+for (const route of ["/", "/platform/", "/solutions/", "/security/", "/resources/", "/request-demo/"]) {
+  test(`${route} has no basic detectable accessibility violations`, async ({ page }) => {
+    await page.goto(route);
+    const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
+    expect(results.violations).toEqual([]);
+  });
+}
 
 test("production export runs under CSP without console errors", async ({ page }) => {
   const errors: string[] = [];

@@ -1,2 +1,3 @@
-import{describe,expect,it}from"vitest";import{publicRoutes}from"@/lib/routes";
+import{describe,expect,it}from"vitest";import{publicRoutes}from"@/lib/routes";import{siteConfig,suites}from"@/content/site";
 describe("public routes",()=>{it("contains every approved route",()=>expect(publicRoutes).toEqual(["/","/platform","/solutions","/industries","/pricing","/security","/resources","/company","/contact","/request-demo","/request-demo/success","/privacy","/terms"]));it("contains no duplicates",()=>expect(new Set(publicRoutes).size).toBe(publicRoutes.length))});
+describe("product positioning",()=>{it("presents eight integrated suites",()=>expect(suites).toHaveLength(8));it("labels the preserved solutions route as Suites",()=>expect(siteConfig.navigation).toContainEqual(["Suites","/solutions"]))});

@@ -1,6 +1,7 @@
 import { createServer } from "node:http";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { extname, join, normalize, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const root=resolve("out");
 const types={".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json",".svg":"image/svg+xml",".xml":"application/xml",".txt":"text/plain; charset=utf-8",".ico":"image/x-icon"};
@@ -16,4 +17,4 @@ export const server=createServer((request,response)=>{
 });
 export function startStaticServer(){return new Promise((resolve,reject)=>{server.once("error",reject);server.listen(4173,"127.0.0.1",()=>{process.stdout.write("Static site listening on http://127.0.0.1:4173\n");resolve(server)})})}
 for(const signal of ["SIGINT","SIGTERM"]){process.on(signal,()=>{server.closeAllConnections();server.close(()=>process.exit(0));setTimeout(()=>process.exit(0),250).unref()})}
-if(process.argv[1]&&import.meta.url===new URL(process.argv[1],"file:").href)await startStaticServer();
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))await startStaticServer();

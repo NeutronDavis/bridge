@@ -1,20 +1,22 @@
 export const siteConfig = {
   name: "Bridge Dynamics",
   company: "Southbridge Technologies",
-  description: "A modern enterprise business operating platform designed to help organisations manage people, projects, finance, operations, governance and business growth from one connected platform.",
+  description: "Bridge Dynamics is an Enterprise Business Operating System that unifies people, operations, finance, collaboration, enterprise content, workflows and analytics on one secure platform.",
   navigation: [
-    ["Platform", "/platform"], ["Solutions", "/solutions"], ["Industries", "/industries"],
+    ["Platform", "/platform"], ["Suites", "/solutions"], ["Industries", "/industries"],
     ["Pricing", "/pricing"], ["Security", "/security"], ["Resources", "/resources"], ["Company", "/company"],
   ] as const,
 };
 
 export const suites = [
-  { name: "Core Platform", accent: "blue", description: "The secure foundation for shared records, access, workflow and configuration.", capabilities: ["Identity and access", "Workflow", "Documents", "Notifications", "Audit", "Configuration", "Reporting"] },
-  { name: "People Suite", accent: "violet", description: "Coordinate the employee lifecycle and build a clear view of your workforce.", capabilities: ["Employees", "Leave", "Attendance", "Payroll", "Recruitment", "Performance", "Training"] },
-  { name: "Customer Suite", accent: "cyan", description: "Connect commercial activity around a consistent customer relationship view.", capabilities: ["CRM", "Leads", "Customers", "Opportunities", "Quotations", "Invoicing", "Contracts"] },
-  { name: "Operations Suite", accent: "amber", description: "Bring projects, supply, assets and field activity into coordinated operations.", capabilities: ["Projects", "Procurement", "Vendors", "Assets", "Inventory", "Fleet"] },
-  { name: "Governance Suite", accent: "green", description: "Make risk, quality, compliance and corrective action part of daily work.", capabilities: ["QHSE", "Incidents", "Risk", "CAPA", "Audits", "Inspections", "Compliance"] },
-  { name: "Insights Suite", accent: "indigo", description: "Turn connected operational information into decision-ready intelligence.", capabilities: ["Dashboards", "Reports", "Analytics", "Executive visibility"] },
+  { name: "Core Platform", accent: "blue", icon: "network", description: "The shared foundation for identity, workflow, integration, configuration and accountable enterprise operations.", capabilities: ["Identity & Access", "Workflow Automation", "Notifications", "Reporting", "Integration Services", "Configuration", "Audit"] },
+  { name: "Workplace Suite", accent: "cyan", icon: "customer", description: "A connected workplace for communication and collaboration in the context of enterprise work.", capabilities: ["Enterprise Messaging", "Contextual Conversations", "Message Boards", "Announcements", "Enterprise Notifications"] },
+  { name: "Enterprise Content Management Suite", accent: "indigo", icon: "content", description: "Govern documents and business records as connected enterprise content, not isolated files.", capabilities: ["Document Libraries", "Contextual Documents", "Version Control", "Metadata", "Search", "Sharing", "Retention", "Compliance"] },
+  { name: "People Suite", accent: "violet", icon: "people", description: "Coordinate workforce administration, development and performance from a shared employee view.", capabilities: ["Employees", "Departments", "Attendance", "Leave", "Performance", "Training"] },
+  { name: "Customer Suite", accent: "cyan", icon: "customer", description: "Connect commercial and service activity around one consistent customer relationship view.", capabilities: ["CRM", "Sales", "Customer Service", "Contracts"] },
+  { name: "Operations Suite", accent: "amber", icon: "operations", description: "Bring projects, supply, assets and service activity into coordinated enterprise operations.", capabilities: ["Projects", "Procurement", "Inventory", "Assets", "Fleet", "Maintenance"] },
+  { name: "Governance Suite", accent: "green", icon: "governance", description: "Make risk, policy, compliance and safety controls part of everyday operational work.", capabilities: ["Risk", "Compliance", "Safety", "Audit", "Policies"] },
+  { name: "Insights Suite", accent: "indigo", icon: "insights", description: "Turn shared enterprise information into decision-ready management and executive intelligence.", capabilities: ["Dashboards", "Reporting", "Executive Analytics", "KPIs", "Business Intelligence"] },
 ] as const;
 
 export const industries = [
@@ -26,7 +28,9 @@ export const industries = [
 ] as const;
 
 export const resources = [
-  { title: "Moving Beyond Spreadsheets", time: "6 min read", summary: "Recognise when spreadsheets have become an operational constraint and plan a controlled transition to connected business processes." },
-  { title: "Improving Operational Visibility", time: "5 min read", summary: "Learn how shared information, defined ownership and management reporting create a clearer view of performance." },
-  { title: "Selecting an Enterprise Business Platform", time: "8 min read", summary: "A practical framework for assessing fit, configuration, governance, implementation and long-term partnership." },
+  { category: "Article", title: "Moving Beyond Spreadsheets", time: "6 min read", summary: "Recognise when spreadsheets have become an operational constraint and plan a controlled transition to connected business processes." },
+  { category: "Whitepaper", title: "Improving Operational Visibility", time: "5 min read", summary: "Learn how shared information, defined ownership and management reporting create a clearer view of performance." },
+  { category: "Implementation Guide", title: "Selecting an Enterprise Business Platform", time: "8 min read", summary: "A practical framework for assessing platform fit, configuration, governance, implementation and long-term partnership." },
 ] as const;
+
+export const resourceTypes = ["Articles", "Whitepapers", "Case Studies", "Implementation Guides", "Videos", "Product Updates"] as const;
