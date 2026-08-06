@@ -1,17 +1,20 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export function PlatformIllustration() {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate cursor offset from center of window (-0.5 to 0.5)
-      const x = (e.clientX / window.innerWidth) - 0.5;
-      const y = (e.clientY / window.innerHeight) - 0.5;
-      setCoords({ x, y });
+      // Normalise cursor position relative to window centre (-0.5 to 0.5)
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+      el.style.setProperty("--mouse-x", String(x));
+      el.style.setProperty("--mouse-y", String(y));
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -26,10 +29,6 @@ export function PlatformIllustration() {
       className="hero-image text-center lg:text-end"
       role="img"
       aria-label="Integrated Bridge Dynamics suites sharing one enterprise operating platform"
-      style={{
-        "--mouse-x": coords.x,
-        "--mouse-y": coords.y,
-      } as React.CSSProperties}
     >
       <img
         src="/images/hero-image.svg"
