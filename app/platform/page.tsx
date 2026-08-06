@@ -18,4 +18,78 @@ const services = [
   ["Configuration", "Forms, fields, rules and processes configured around organisational requirements."],
   ["Developer APIs", "Defined interfaces for approved integrations and customer-specific extensions."],
 ];
-export default function Platform() { return <><PageHero eyebrow="The Bridge Dynamics platform" title="One operating foundation for the entire enterprise" description="Shared platform services connect every suite, process, document and decision—giving departments the capabilities they need without creating data silos." /><section className="section"><div className="container"><SectionHeading eyebrow="Platform services" title="The capabilities every suite shares">Bridge Dynamics provides common enterprise services once, then applies them consistently across business operations.</SectionHeading><div className="feature-columns platform-services">{services.map(([title, text], index) => <article className="feature-item" key={title}><span className="feature-item__number">{String(index + 1).padStart(2, "0")}</span><h2>{title}</h2><p>{text}</p></article>)}</div></div></section><section className="section section--soft"><div className="container split split--flow"><div><SectionHeading eyebrow="One source of truth" title="Every layer strengthens the next">Identity establishes responsibility. Workflow coordinates action. Enterprise content preserves context. Workplace connects people. Suites run the business. Reporting brings the enterprise view together.</SectionHeading></div><PlatformFlow /></div></section><section className="section section--brand"><div className="container split"><div><p className="eyebrow eyebrow--light">Designed to adapt</p><h2>One platform, configured around your organisation</h2><p className="lead">Shared services provide consistency while configurable forms, rules, permissions and workflows reflect how your enterprise operates.</p></div><ul className="capability-panel">{["Configurable workflows", "Approval processes", "Role-based permissions", "Business rules", "Custom fields and forms", "Customer-specific extensions"].map(item => <li key={item}>{item}</li>)}</ul></div></section><FinalCta /></> }
+export default function Platform() {
+  return (
+    <>
+      <PageHero
+        eyebrow="The Bridge Dynamics platform"
+        title="One operating foundation for the entire enterprise"
+        description="Shared platform services connect every suite, process, document and decision; giving departments the capabilities they need without creating data silos."
+      />
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Platform services"
+            title="The capabilities every suite shares"
+          >
+            Bridge Dynamics provides common enterprise services once, then
+            applies them consistently across business operations.
+          </SectionHeading>
+          <div className="feature-columns platform-services">
+            {services.map(([title, text], index) => (
+              <article className="feature-item" key={title}>
+                <span className="feature-item__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h2>{title}</h2>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section section--soft">
+        <div className="container split split--flow">
+          <div>
+            <SectionHeading
+              eyebrow="One source of truth"
+              title="Every layer strengthens the next"
+            >
+              Identity establishes responsibility. Workflow coordinates action.
+              Enterprise content preserves context. Workplace connects people.
+              Suites run the business. Reporting brings the enterprise view
+              together.
+            </SectionHeading>
+          </div>
+          <PlatformFlow />
+        </div>
+      </section>
+      <section className="section section--brand">
+        <div className="container split">
+          <div>
+            <p className="eyebrow eyebrow--light">Designed to adapt</p>
+            <h2>One platform, configured around your organisation</h2>
+            <p className="lead">
+              Shared services provide consistency while configurable forms,
+              rules, permissions and workflows reflect how your enterprise
+              operates.
+            </p>
+          </div>
+          <ul className="capability-panel">
+            {[
+              "Configurable workflows",
+              "Approval processes",
+              "Role-based permissions",
+              "Business rules",
+              "Custom fields and forms",
+              "Customer-specific extensions",
+            ].map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <FinalCta />
+    </>
+  );
+}
