@@ -821,9 +821,18 @@ button, input, select, textarea {
   background: var(--neutral-50);
 }
 
-.industry-row > span:first-child {
-  color: var(--brand-900);
-  font-weight: 800;
+.industry-row > span:first-child,
+.industry-row > .industry-icon {
+  color: var(--brand-600, #0d62f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.industry-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
 }
 
 .industry-row h3 { margin: 0; font-family: "Poppins", sans-serif; }

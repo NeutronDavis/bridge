@@ -9,6 +9,59 @@ import { SuiteCard } from "@/components/marketing/SuiteCard";
 import { createMetadata } from "@/lib/seo/metadata";
 import { industries, suites } from "@/content/site";
 
+const industryIcons: Record<string, React.ReactNode> = {
+  "Oil & Gas Services": (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2 C12 2 5 10 5 15 a7 7 0 0 0 14 0 C19 10 12 2 12 2 Z"/>
+    </svg>
+  ),
+  "Engineering & Construction": (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {/* Hard hat dome */}
+      <path d="M4 15 C4 9 8 4 12 4 C16 4 20 9 20 15"/>
+      {/* Brim */}
+      <path d="M2 15 L22 15"/>
+      {/* Hat band */}
+      <path d="M4 15 L4 17 Q4 18 5 18 L19 18 Q20 18 20 17 L20 15"/>
+      {/* Centre ridge */}
+      <line x1="12" y1="4" x2="12" y2="10"/>
+    </svg>
+  ),
+  "Professional Services": (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {/* Head */}
+      <circle cx="12" cy="6" r="3"/>
+      {/* Suit jacket body */}
+      <path d="M6 22 C6 16 8 13 12 13 C16 13 18 16 18 22"/>
+      {/* Left lapel */}
+      <path d="M9 13 L10.5 17 L12 15"/>
+      {/* Right lapel */}
+      <path d="M15 13 L13.5 17 L12 15"/>
+      {/* Tie */}
+      <path d="M12 15 L11.25 19 L12 20.5 L12.75 19 Z"/>
+    </svg>
+  ),
+  "Public Sector": (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="3" y1="22" x2="21" y2="22"/>
+      <line x1="6" y1="18" x2="6" y2="11"/>
+      <line x1="10" y1="18" x2="10" y2="11"/>
+      <line x1="14" y1="18" x2="14" y2="11"/>
+      <line x1="18" y1="18" x2="18" y2="11"/>
+      <polygon points="12 2 20 7 4 7"/>
+    </svg>
+  ),
+  "Facility Management": (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      <path d="M4.93 4.93a10 10 0 0 0 0 14.14"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path d="M8.46 8.46a5 5 0 0 0 0 7.07"/>
+    </svg>
+  ),
+};
+
 export const metadata: Metadata = createMetadata("Enterprise Business Operating System", "One platform. Integrated suites. One source of truth for the modern enterprise.");
 const platformPrinciples = [
   ["One Platform", "A common enterprise foundation connects business capabilities without creating another fragmented technology estate."],
@@ -129,7 +182,7 @@ export default function Home() {
         <div className="industry-list">
           {industries.map((industry, index) =>
             <article className="industry-row" key={industry.name}>
-              <span>0{index + 1}</span>
+              <span className="industry-icon" aria-hidden="true">{industryIcons[industry.name]}</span>
               <h3>{industry.name}</h3>
               <p>{industry.description}</p>
               <Link className="text-link" href="/industries">Industry view <span aria-hidden="true">→</span></Link>
