@@ -184,22 +184,52 @@
   color: #ffffff !important;
 }
 
+/* Light Mode Footer Overrides */
 [data-theme="light"] .site-footer {
-  background: #0f172a;
-  color: #94a3b8;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+[data-theme="light"] .site-footer .brand {
+  color: #0f172a;
 }
 
 [data-theme="light"] .site-footer h2 {
-  color: #ffffff;
+  color: #0f172a;
 }
 
-[data-theme="light"] .site-footer p,
+[data-theme="light"] .site-footer p {
+  color: #64748b;
+}
+
+[data-theme="light"] .footer-grid > div > a:not(.brand):not(.footer-action) {
+  color: #475569;
+}
+
+[data-theme="light"] .footer-grid > div > a:not(.brand):not(.footer-action):hover {
+  color: #0284c7;
+}
+
+[data-theme="light"] .footer-action {
+  color: #0284c7;
+}
+
+[data-theme="light"] .footer-action:hover {
+  color: #0369a1;
+}
+
 [data-theme="light"] .footer-bottom {
-  color: #94a3b8;
+  color: #64748b;
+  border-top-color: #e2e8f0;
 }
 
-[data-theme="light"] .footer-grid>div>a:not(.brand):not(.footer-action):hover {
-  color: #ffffff;
+[data-theme="light"] .footer-bottom a {
+  color: #475569;
+}
+
+[data-theme="light"] .footer-bottom a:hover {
+  color: #0284c7;
 }
 
 /* Light Mode Dashboard Illustration Overrides */
@@ -1003,6 +1033,12 @@ textarea {
   gap: 0.4rem;
   align-items: center;
   white-space: nowrap;
+}
+
+.date-picker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .icon-btn-bell {

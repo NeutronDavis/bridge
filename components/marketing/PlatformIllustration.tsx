@@ -5,11 +5,11 @@ import { BrandMark } from "@/components/layout/Header";
 
 export function PlatformIllustration() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [style, setStyle] = useState<React.CSSProperties>({});
+  const frameRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !frameRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -19,10 +19,8 @@ export function PlatformIllustration() {
     const rotateX = -((y - centerY) / centerY) * 12;
     const rotateY = ((x - centerX) / centerX) * 12;
 
-    setStyle({
-      transform: `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.05, 1.05, 1.05)`,
-      transition: "transform 0.1s ease-out",
-    });
+    frameRef.current.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.05, 1.05, 1.05)`;
+    frameRef.current.style.transition = "transform 0.1s ease-out";
   };
 
   const handleMouseEnter = () => {
@@ -31,10 +29,10 @@ export function PlatformIllustration() {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    setStyle({
-      transform: `perspective(1200px) rotateY(-5deg) rotateX(2.5deg) scale(1.04)`,
-      transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-    });
+    if (frameRef.current) {
+      frameRef.current.style.transform = "";
+      frameRef.current.style.transition = "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+    }
   };
 
   return (
@@ -51,7 +49,7 @@ export function PlatformIllustration() {
       <div className="hero-dashboard-glow" aria-hidden="true" />
 
       {/* Floating product UI mockup frame */}
-      <div className="dashboard-frame" style={style}>
+      <div ref={frameRef} className="dashboard-frame">
         <div className="dashboard-body">
           {/* Left Sidebar */}
           <aside className="dashboard-sidebar">
@@ -137,7 +135,7 @@ export function PlatformIllustration() {
               <h2>Enterprise Operations Control</h2>
               <div className="header-controls">
                 <div className="date-picker-pill">
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span className="date-picker-label">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                       <line x1="16" y1="2" x2="16" y2="6" />
