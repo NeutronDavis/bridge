@@ -1,6 +1,7 @@
 .resource-library{padding-top:2rem}
-.resource-type-list{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:3rem}
-.resource-type-list span{padding:.6rem .9rem;border:1px solid var(--neutral-200);border-radius:2rem;color:var(--neutral-700);background:var(--white);font-size:.86rem;font-weight:680}
+.resource-type-list { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 3rem; }
+.resource-type-list span { padding: 0.55rem 1.15rem; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 2rem; color: #38bdf8; background: rgba(13, 38, 70, 0.7); backdrop-filter: blur(8px); font-size: 0.86rem; font-weight: 650; transition: all 0.2s ease; cursor: pointer; }
+.resource-type-list span:hover { background: rgba(21, 81, 141, 0.95); border-color: rgba(56, 189, 248, 0.6); color: #ffffff; box-shadow: 0 0 14px rgba(56, 189, 248, 0.35); }
 .platform-services{grid-template-columns:repeat(2,1fr)}
 .security-grid{grid-template-columns:repeat(4,1fr)}
 .demo-steps{display:grid;gap:1.25rem;margin:2rem 0 0;padding:0;list-style:none}
