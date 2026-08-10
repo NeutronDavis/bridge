@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { StructuredData } from "@/lib/seo/StructuredData";
 import { siteConfig } from "@/content/site";
 import { ScrollObserver } from "@/components/ui/ScrollObserver";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : undefined,
@@ -25,6 +26,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){
         <Footer/>
         <StructuredData/>
         <ScrollObserver/>
+        <ScrollToTop/>
       </body>
     </html>
   );
