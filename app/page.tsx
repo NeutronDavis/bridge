@@ -116,9 +116,18 @@ export default function Home(){return <>
 </section>
 <section className="section section--soft">
   <div className="container">
-    <SectionHeading eyebrow="Integrated product suites" title="Enterprise capability, connected by design">Each suite serves a distinct area of the organisation while sharing the same identity, workflows, content, collaboration and source of enterprise data.</SectionHeading>
+    <SectionHeading eyebrow="Integrated product suites" title="Enterprise capability, connected by design">
+      Each suite serves a distinct area of the organisation while sharing the same identity, workflows, content, collaboration and source of enterprise data.
+    </SectionHeading>
     <div className="suite-grid suite-grid--integrated">
-      {suites.map((suite,index)=><SuiteCard key={suite.name} suite={suite} index={index}/>)}
+      {suites.slice(0, 4).map((suite, index) => (
+        <SuiteCard key={suite.name} suite={suite} index={index} />
+      ))}
+    </div>
+    <div className="section-action-bar">
+      <ButtonLink href="/solutions" variant="secondary">
+        Explore All Product Suites <span aria-hidden="true"></span>
+      </ButtonLink>
     </div>
   </div>
 </section>

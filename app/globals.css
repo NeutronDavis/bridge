@@ -483,6 +483,13 @@ textarea {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.section-action-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
 .section--brand {
   background: linear-gradient(180deg, var(--brand-800) 0%, var(--brand-950) 100%);
   border-top: 1px solid rgba(21, 81, 141, 0.3);
@@ -1296,9 +1303,15 @@ textarea {
   height: 2.8rem;
   margin-bottom: 1.75rem;
   border-radius: 0.75rem;
-  color: var(--white);
+  color: #ffffff !important;
   background: var(--brand-700);
   box-shadow: 0 0 14px rgba(21, 81, 141, 0.4);
+}
+
+[data-theme="light"] .suite-card__icon,
+[data-theme="light"] .suite-card__icon svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 .capability-list {
