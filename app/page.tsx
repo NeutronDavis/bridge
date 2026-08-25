@@ -86,12 +86,6 @@ export default function Home() {
             <ButtonLink href="/request-demo">Request a Demonstration</ButtonLink>
             <ButtonLink href="/platform" variant="secondary">Explore the Platform</ButtonLink>
           </div>
-          {/* <p className="hero-statement">One Platform • Integrated Suites • One Source of Truth.</p>
-          <div className="trust-line" aria-label="Platform qualities">
-            <span>•Shared enterprise identity</span>
-            <span>•Connected workflows</span>
-            <span>•Governed information</span>
-          </div> */}
         </div>
         <PlatformIllustration />
       </div>
@@ -118,7 +112,12 @@ export default function Home() {
           Each suite serves a distinct area of the organisation while sharing the same identity, workflows, content, collaboration and source of enterprise data.
         </SectionHeading>
         <div className="suite-grid suite-grid--integrated">
-          {suites.map((suite, index) => <SuiteCard key={suite.name} suite={suite} index={index} />)}
+          {suites.slice(0, 4).map((suite, index) => <SuiteCard key={suite.name} suite={suite} index={index} />)}
+        </div>
+        <div className="section-cta">
+          <ButtonLink href="/solutions" variant="secondary">
+            See all product suites
+          </ButtonLink>
         </div>
       </div>
     </section>
