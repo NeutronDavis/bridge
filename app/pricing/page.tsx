@@ -12,7 +12,7 @@ export default function Pricing() {
     <section className="section">
       <div className="container price-layout">
         <aside className="price-card">
-          <span className="price-card__badge">Annual platform subscription</span>
+          {/* <span className="price-card__badge">Annual platform subscription</span> */}
           <span className="price-value">From ₦1.2m</span>
           <span className="price-period">per year</span>
           <p className="price-card__note">This starting figure is indicative and does not constitute a binding quotation.</p>
