@@ -3,7 +3,7 @@ import{PageHero}from"@/components/marketing/PageHero";
 import{ButtonLink}from"@/components/ui/ButtonLink";
 import{FinalCta}from"@/components/marketing/FinalCta";
 import { createMetadata } from "@/lib/seo/metadata";
-export const metadata: Metadata = createMetadata("Pricing", "Bridge Dynamics plans start from ₦1.2 million annually, with tailored implementation and support.", "/pricing");
+export const metadata: Metadata = createMetadata("Pricing", "Bridge Dynamics tailored enterprise plans with custom implementation and dedicated support.", "/pricing");
 const services = [["Annual platform subscription", "Access to the agreed Bridge Dynamics capabilities and selected modules."], ["One-time implementation", "Structured discovery, solution design, setup and operational readiness."], ["Configuration", "Workflows, forms, rules, roles, approvals, notifications and custom fields."], ["Training", "Role-relevant enablement for administrators, managers and users."], ["Data migration", "Agreed preparation and transfer of suitable data from existing systems."], ["Integrations", "Scoped connections to approved business systems and services."], ["Customer-specific extensions", "Capabilities required for specific operating needs."], ["Premium support options", "Support arrangements aligned to service expectations and operating context."]];
 export default function Pricing() {
   return <>
@@ -12,10 +12,8 @@ export default function Pricing() {
     <section className="section">
       <div className="container price-layout">
         <aside className="price-card">
-          {/* <span className="price-card__badge">Annual platform subscription</span> */}
-          <span className="price-value">From ₦1.2m</span>
-          <span className="price-period">per year</span>
-          <p className="price-card__note">This starting figure is indicative and does not constitute a binding quotation.</p>
+          <h2>Tailored to Your Operations</h2>
+          <p className="price-card__note">Every organisation operates at a different scale with specific workflows and compliance requirements. We prepare a tailored proposal aligned directly with your operating goals.</p>
           <ButtonLink href="/contact?enquiry=pricing" variant="light">Request a Tailored Quote</ButtonLink>
           <ButtonLink href="/request-demo" variant="secondary">Request a Demonstration</ButtonLink>
         </aside>
